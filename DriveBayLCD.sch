@@ -8562,6 +8562,8 @@ Source: 008-0260-0_E.pdf</description>
 <part name="R7" library="resistor" deviceset="R-EU_" device="R0805"/>
 <part name="R8" library="resistor" deviceset="R-EU_" device="R0805"/>
 <part name="R9" library="resistor" deviceset="R-EU_" device="R0805" value="10"/>
+<part name="R10" library="resistor" deviceset="R-EU_" device="R0805" value="22"/>
+<part name="R11" library="resistor" deviceset="R-EU_" device="R0805" value="22"/>
 </parts>
 <sheets>
 <sheet>
@@ -8617,6 +8619,14 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="R7" gate="G$1" x="27.94" y="187.96"/>
 <instance part="R8" gate="G$1" x="25.4" y="200.66"/>
 <instance part="R9" gate="G$1" x="233.68" y="60.96" rot="R180"/>
+<instance part="R10" gate="G$1" x="68.58" y="45.72" smashed="yes" rot="R180">
+<attribute name="NAME" x="67.818" y="49.0474" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="74.422" y="48.768" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R11" gate="G$1" x="68.58" y="43.18" smashed="yes" rot="R180">
+<attribute name="NAME" x="73.66" y="41.402" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="67.31" y="41.402" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -8751,9 +8761,9 @@ Source: 008-0260-0_E.pdf</description>
 <label x="76.2" y="106.68" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="A" pin="D+"/>
-<wire x1="76.2" y1="45.72" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
-<label x="73.66" y="45.72" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="63.5" y1="45.72" x2="60.96" y2="45.72" width="0.1524" layer="91"/>
+<label x="60.96" y="45.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="D-" class="0">
@@ -8763,9 +8773,9 @@ Source: 008-0260-0_E.pdf</description>
 <label x="76.2" y="104.14" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="A" pin="D-"/>
-<wire x1="76.2" y1="43.18" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
-<label x="73.66" y="43.18" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="63.5" y1="43.18" x2="60.96" y2="43.18" width="0.1524" layer="91"/>
+<label x="60.96" y="43.18" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -9242,6 +9252,20 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="U2" gate="A" pin="G"/>
 <wire x1="223.52" y1="60.96" x2="228.6" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="R9" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$126" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="D-"/>
+<wire x1="76.2" y1="43.18" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$125" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="D+"/>
+<wire x1="76.2" y1="45.72" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
